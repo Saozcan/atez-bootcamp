@@ -36,5 +36,6 @@ console.log(calculateArguments(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
 console.log(calculateArguments(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "a"))
 console.log(calculateArguments(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "a", Infinity))
 console.log(calculateArguments(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "a", Infinity, -1))
+console.log(calculateArguments(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "a", Infinity, -1, 0))
 
 
