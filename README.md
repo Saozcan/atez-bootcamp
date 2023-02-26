@@ -70,4 +70,3 @@ interface  TestInterface {
 * Architecture filing (Models, enums, classes)
 * Hot reload and watching
 * Commands
-*
