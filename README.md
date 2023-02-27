@@ -2,12 +2,10 @@
 
 ## <a href="https://github.com/Saozcan/atez-bootcamp/tree/main/week1" target="_blank">Week-1</a>
 
-<a href="https://github.com/Saozcan/atez-bootcamp/tree/main/week1" target="_blank">Week-1</a>
-
 * Değişkenler, while for döngüleri, string fonksiyonları, typeler işlendi.
 * Ödev olarak faktoriyel ve sınırsız argüman (variadic) soruları çözüldü.
 
-## Week-2
+## <a href="https://github.com/Saozcan/atez-bootcamp/tree/main/week2" target="_blank">Week-2</a>
 
 ###### Git
 
@@ -76,4 +74,6 @@ interface  TestInterface {
 * Hot reload and watching
 * Commands
 
-## Week-3
+## <a href="https://github.com/Saozcan/atez-bootcamp/tree/main/week3" target="_blank">Week-3</a>
+
+* Start...
