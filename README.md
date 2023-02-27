@@ -21,14 +21,18 @@
 ###### Keywords
 
 * Ecmascript,
+  * Her sene güncellenen JS standartları, örnek vermek gerekirse ES8 de gelen async/await fonksiyonları.
 * Spreadoperator,
+  * [x, y, ...z] Array yada objenin geri kalan elemanlarını tutar.
 * Optional chaining operator,
+  * obje?.name Null gelebilir
 * Terary operator,
+  * Kısa else if -> number === 10 ? console.log(10) : console.log(0)
 * Destructuring,
+  * Obje yada array parçalamak için kullanılır. Parçalamaktan kastımız orjinale herhangi bir etkisi yoktur, sadece içinden istenilen çekilir.
 * Loopback
 
-
-###### Class
+###### Destructuring,Class
 
 * Constructor, set get funcs, extends, super
 
@@ -59,7 +63,6 @@ interface  TestInterface {
  }
 ```
 
-
 #### Next Week
 
 * Generics and any
@@ -70,4 +73,5 @@ interface  TestInterface {
 * Architecture filing (Models, enums, classes)
 * Hot reload and watching
 * Commands
-*
+
+## Week-3
