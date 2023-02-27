@@ -1,6 +1,8 @@
 # ATEZ Bootcamp
 
-## Week-1
+## <a href="https://github.com/Saozcan/atez-bootcamp/tree/main/week1" target="_blank">Week-1</a>
+
+<a href="https://github.com/Saozcan/atez-bootcamp/tree/main/week1" target="_blank">Week-1</a>
 
 * Değişkenler, while for döngüleri, string fonksiyonları, typeler işlendi.
 * Ödev olarak faktoriyel ve sınırsız argüman (variadic) soruları çözüldü.
@@ -62,7 +64,6 @@ interface  TestInterface {
    id: string,
  }
 ```
-
 
 #### Next Week
 
