@@ -34,7 +34,7 @@
 
 ###### Destructuring,Class
 
-* Constructor, set get funcs, extends, super
+* Constructor, set get funcs, extends, super.
 
 ###### TypeScript
 
