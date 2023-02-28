@@ -114,6 +114,9 @@ class Foo {
  * class, bir sınıfın özelliklerini tanımlamasını sağlar.
  */
 
+interface AnimalInterface {
+  lastName?: string
+}
 class Animal {
   name: string;
   type: string;
@@ -124,8 +127,8 @@ class Animal {
   }
 }
 
-class Dog extends Animal {
-  constructor(name: string) {
+class Dog extends Animal implements AnimalInterface{
+  constructor(name: string, public lastName?: string) {
     super(name, "dog");
   }
 
