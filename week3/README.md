@@ -14,7 +14,7 @@
    Kendi içinde numaralandırma yaparak kod içinde koşullar vb. alanda kullanılabilir.
 * Deep Dive Functions
 
-  * Ts fonksiyonlarına delin dalış
+  * Ts fonksiyonlarına delin dalış, index sayfasında detaylı anlatılmıştır.
 * Deep Dive Inheritance and extends
 
   * Inheritance classların miras yapısı için kullanılır. Extednds keyword ile kendileri aralarında miras yapısı kullanılabilir.
@@ -30,5 +30,5 @@
   * Yorumlama Js, Ts dünyası için bence vazgeçilmez bir özelliktir. Özellikle yapılan işlemlerin anlatılması, fonksiyon ve componentlerin görevlerinin, alınan argümanların, `return` değerlerinin anlatılması çok önemlidir. Grup çalışmalarında kişilerin kodu yazan kişi ile hiçbir iletişime geçmeden kodu idame edebilmesi gerekir. Yorum satırları deyince özellikle TODO: işlemlerine çok ihtiyaç duyuluyor ve gerçekten çok hayat kurtarıyor.
 * Bonus implements 👍 Interface eklemek için kullanılabilir, `nullable` değilse hepsi eklenmek zorundadır.
 
-### Örnek çalışmalar bulunan dizinde...
+### Örnek çalışmalar bulunan dizinde index.ts sayfasında verilmiştir.
 

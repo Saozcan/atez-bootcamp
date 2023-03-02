@@ -1,216 +1,81 @@
 /**
- * Week-3: TypeScript
- *
- * Generic yapı kullanılarak Array oluşturduğumu ve array'in içinde oluşturulan Week3 interface'ini kullanarak
- * bir obje oluşturduğumu varsayarak, week3Array isimli bir array oluşturuldu.
+ * Interface
+ * Aynı classlarda olduğu gibi interface içinde gereksiz duplacation olmaması için extends kullanılabilir.
+ * Soru işareti olarak verilen değişkenler yani optional olanlar ise interface içinde tanımlanabilir ve kullanılmak zorunda değildir. Diğerleri ilk oluşturulmada zorunda doldurulmalıdır.
  */
-import * as modules from "./testModule";
 
-
-interface Week3 {
-  title: string;
-  description: string;
-  deadline: Date;
-  done: boolean;
+interface Animal {
+  name: string;
+  type: string;
+  age: number;
 }
 
-const week3Array: Array<Week3> = [
-  {
-    title: "Get to know TypeScript",
-    description: "Read the TypeScript documentation",
-    deadline: new Date("2020-11-30"),
-    done: false,
-  },
-]
-
-
-/**
- * Any, generic
- * Gelen her tipi kabul eder, bir çeşit js dünyasına geri dönüş gibi
- * Generic, fonksiyonlarda kullanıldığında, fonksiyonun parametre ve döndürülen değerlerinin tipi belirlenir.
- */
-const getAnyArgumentOnly = (arg: any): any => {
-  return arg;
+interface AnimalTwo {
+  tail?: boolean;
 }
-const getGenericArgumentOnly = <T>(arg: T): T => {
-  return arg;
+//"," ile interface'ler birleştirilebilir.
+// Sonradanda interface'ler extend edilebilir.
+interface Catt extends Animal, AnimalTwo {
+  eyeColor?: string;
+  wiskers?: boolean;
+  sound: () => void;
 }
-
+// Birden fazla extend işlemleri yapılabilir. interface tekrardan düzenlene bildiğinden AnimalTwo interface'ini ekleme işlemi yapıldı.
+interface Catt extends AnimalTwo {
+}
+const cat: Catt = {
+  name: 'Kedi',
+  type: 'Kedi',
+  age: 2,
+  sound: () => console.log('Miyavv'),
+}
+const Catt: Catt = {
+  name: 'Mavis',
+  type: 'Kedi',
+  age: 2,
+  eyeColor: 'Blue',
+  wiskers: true,
+  sound: () => console.log('Miyavv içten miyavv'),
+}
 
 /**
  * Enums
- * Enum'lar, bir dizi isimlendirilmiş sabitleri temsil eder.
- * Verilen respond dönen değeri anlamlı hale getirerek, kullanıcak kişi için daha anlaşılır bir hale getirir.
+ * Çok kullanılmıyor. Enum'lar bir obje gibi düşünülebilir. Enum'lar içindeki değerlerin indexleri 0'dan başlar.
+ * Aksi durumlarda 0 başlangıç değeri değiştirilebilir. İlk değer 1 olarak tanımlanabilir yada daha farklı bir değer olarak tanımlanabilir.
  */
-enum UserResponse {
-  No = 0,
-  Yes = 1,
+enum Month {
+  January,
+  February,
+  March,
+  April,
 }
+console.log(Month.January); // 0
 
-function respond(recipient: string, message: UserResponse): void {
-  // ...
+enum Color {
+  Red= 5,
+  Green,
+  Blue,
 }
-
-respond("Princess Caroline", UserResponse.Yes);
-
+let c: Color = Color.Green;
+console.log(c); // 6
 
 /**
- * Fonksiyonlar
- * Fonksiyonlar, bir işlevi gerçekleştirmek için bir dizi kodu gruplar.
- * Çeşitleri: Normal, Arrow, Optional, Default, Rest, Overload
- * Normal fonksiyonlar için, parametrelerin tipi ve döndürülen değerin tipi belirtilir.
- * Arrow fonksiyonlar için, parametrelerin tipi belirtilir.
- * Optional fonksiyonlar için, parametrelerin tipi belirtilir ve sonuna ? işareti konur.
- * Default fonksiyonlar için, parametrelerin tipi belirtilir ve sonuna = işareti konur.
- * Rest fonksiyonlar için, parametrelerin tipi belirtilir ve sonuna ... işareti konur.
- * Overload fonksiyonlar için, parametrelerin tipi belirtilir ve sonuna : işareti konur.
- *
- * Arrow ile normal fonksiyon arasındaki fark, arrow fonksiyonun this'ini bind etmemesidir.
- * Normal fonksiyonlar için this, fonksiyonun çağrıldığı yerdeki this'e bağlıdır.
- * Arrow fonksiyonlar için this, fonksiyonun tanımlandığı yerdeki this'e bağlıdır.
- *
+ * Generic Template Types
+ * Verilen tipin özelliklerini otomatik çeker
  */
-function add(x: number, y: number): number {
-  return x + y;
-}
-
-const addArrow = (x: number, y: number): number => x + y;
-
-function buildName(firstName: string, lastName?: string) {
-  if (lastName) return firstName + " " + lastName;
-  else return firstName;
-}
-
-function buildNameDefault(firstName: string, lastName = "Smith") {
-  return firstName + " " + lastName;
-}
-
-function buildNameRest(firstName: string, ...restOfName: string[]) {
-  return firstName + " " + restOfName.join(" ");
-}
-
-// function buildNameOverload(firstName: string): string;
-// function buildNameOverload(firstName: string, lastName: string): string;
-
-// Farklı argümanlar için farklı fonksiyonlar çalışmaktadır. Bunun gibi durumlar için Generic yapı kullanılabilir.
-class Foo {
-  constructor(public name: string) {
-  };
-
-  myMethod(a: string);
-  myMethod(a: number);
-  myMethod(a: number, b: string);
-  myMethod(a: string | number, b?: string) {
-    alert(a.toString());
-  }
-}
-
-
-/**
- * Inheritance and extends (bonus super), class
- * Inheritance, bir sınıfın özelliklerini başka bir sınıfa aktarmasıdır.
- * extends, bir sınıfın başka bir sınıftan özelliklerini almasını sağlar.
- * super, bir sınıfın başka bir sınıftan özelliklerini almasını sağlar.
- * class, bir sınıfın özelliklerini tanımlamasını sağlar.
- */
-
-interface AnimalInterface {
-  lastName?: string
-}
-class Animal {
+type AnimalType = {
   name: string;
   type: string;
-
-  constructor(theName: string, theType: string) {
-    this.name = theName;
-    this.type = theType;
-  }
+  age: number;
+  sound: () => void;
+}
+type Sound = {
+  soundType: string;
 }
 
-class Dog extends Animal implements AnimalInterface{
-  constructor(name: string, public lastName?: string) {
-    super(name, "dog");
-  }
-
-  bark() {
-    console.log("Woof! Woof!");
-  }
+function createAnimalSound () {
+  return `My sound is `
 }
-
-/**
- * Hot Reload
- * Hot Reload, kodunuzun değişmesi durumunda, tarayıcıda otomatik olarak sayfanın yenilenmesini sağlar.
- */
-
-/**
- * Commands
- * Like you see, commands are very useful. You can use them to run your code, debug, format, and more.
- * Very very useful.
- */
-
-
-/** Modules
- * Modules, bir dosyadaki kodu başka bir dosyada kullanmamızı sağlar.
- * export, bir dosyadaki kodu başka bir dosyada kullanmamızı sağlar.
- * import, başka bir dosyadaki kodu kullanmamızı sağlar.
- * default, bir dosyadaki kodu başka bir dosyada kullanmamızı sağlar.
- */
-
-export interface Week3Export {
-  title: string;
-  description: string;
-}
-
-module Week3Module {
-  export interface Week3Export {
-    title: string;
-    description: string;
-  }
-
-  export function test1() {
-    console.log("test1")
-  }
-}
-
-Week3Module.test1() // cpp dan namespace gibi çalışır
-
-
-// Import the entire module into a single variable, and use it to access the module exports
-// import * as Week3Module from "./Week3Module";
-// let week3Module: Week3Module.Week3Export = { title: "Get to know TypeScript", description: "Read the TypeScript documentation" };
-// Bütün modülü tek bir değişkene aktarır ve modülün export edilen özelliklerine erişmek için kullanılır.
-modules.test2()
-modules.default() // default function
-modules.test1() // normal export function
-
-
-/**
- * Implementing Interfaces
- * Bir interface'i implemente etmek, interface'in özelliklerini bir sınıfa aktarmaktır.
- * Bir interface'i implemente etmek için, sınıfın interface'in özelliklerini içermesi gerekir.
- */
-
-interface Week3Interface {
-  title: string;
-  description: string;
-}
-
-class Week3Class implements Week3Interface {
-  title: string;
-  description: string;
-  constructor(title: string, description: string) {
-    this.title = title;
-    this.description = description;
-  }
-}
-
-
-
-
-
-
-
-
 
 
 
