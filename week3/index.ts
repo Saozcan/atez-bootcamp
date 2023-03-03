@@ -63,6 +63,9 @@ console.log(c); // 6
  * Generic Template Types
  * Verilen tipin özelliklerini otomatik çeker
  */
+function getArrayLength<T>(arg: T[]): number {
+  return arg.length;
+}
 type AnimalType = {
   name: string;
   type: string;
@@ -72,10 +75,85 @@ type AnimalType = {
 type Sound = {
   soundType: string;
 }
-
 function createAnimalSound () {
   return `My sound is `
 }
+
+type JobRun = {
+  job: any;
+  state: string;
+  onCompleted: (cb:(job:any) => void ) => void;
+}
+type SendEmail = {
+  recipientEmail: string;
+  subject: string;
+}
+function enqueueJob (job: any): JobRun {
+  return {
+    job,
+    state: 'que',
+    onCompleted: (cb: (job: any) => void) => cb(job)
+  }
+}
+
+//JobRun with Generic
+type JobRunGeneric<T> = {
+  job: T;
+  state: string;
+  onCompleted: (cb:(job:T) => void ) => void;
+}
+function enqueueJobGeneric<T> (job: T): JobRunGeneric<T> {
+  return {
+    job,
+    state: 'que',
+    onCompleted: (cb: (job: T) => void) => cb(job)
+  }
+}
+const jobRun = enqueueJobGeneric<SendEmail>({recipientEmail: 'qweqwe', subject: 'Hello'})
+
+type Job = {
+  name: string;
+  state: string;
+  start: () => void;
+}
+
+/**
+ * Classes
+ */
+interface NameGenerator {
+generateName: () => string;
+}
+class NameGeneratorClass implements NameGenerator {
+  generateName(): string {
+    return 'Name';
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
