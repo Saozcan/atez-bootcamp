@@ -10,7 +10,8 @@ export function add() {
   if (!todoItem) {
     todoItem = todoDB;
   }
-  const [, , , ...argTextFromArgv] = process.argv;
+  // const [, , , ...argTextFromArgv] = process.argv;
+  const argTextFromArgv = process.argv.slice(process.argv.indexOf("add") + 1);
   const argText = argTextFromArgv.join(" ");
   if (!argText || argText === "") {
     console.log("Please enter a todo");
