@@ -8,7 +8,8 @@ const fs = require("fs");
  * to execute it you need to run the command: node dist/index.js mv <path1> <path2>... <moveToPath>
  */
 function mvCommand() {
-    const [, , , ...allArgs] = process.argv;
+    // const [,,, ...allArgs] = process.argv;
+    const allArgs = process.argv.splice(process.argv.indexOf('cp') + 1);
     if (!allArgs || allArgs.length < 2) {
         console.log('Please provide a path');
         return;
