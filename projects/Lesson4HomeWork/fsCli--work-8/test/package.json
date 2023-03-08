@@ -1,0 +1,18 @@
+{
+  "name": "fscli",
+  "version": "1.0.0",
+  "description": "file system",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "saozcan",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.14.6"
+  },
+  "dependencies": {
+    "commander": "^10.0.0",
+    "conf": "^11.0.1"
+  }
+}
