@@ -1,0 +1,18 @@
+{
+  "name": "todocli",
+  "version": "1.0.0",
+  "description": "todo app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "saozcan",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.14.6"
+  },
+  "dependencies": {
+    "commander": "^10.0.0",
+    "conf": "^9.0.2"
+  }
+}

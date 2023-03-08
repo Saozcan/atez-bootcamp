@@ -77,3 +77,34 @@ interface  TestInterface {
 ## <a href="https://github.com/Saozcan/atez-bootcamp/tree/main/week3" target="_blank">Week-3</a>
 
 * Start...
+
+
+
+
+
+# Keywords
+
+* Type assertions
+
+  * Bazen TypeScript compiler'ını verdiğimiz değer tiplerini ondan daha iyi  bildiğimizi ikna etmemiz gerekebilir. Olası bir tiplemenin önüne geçerek daha doğru bir tip oluşturabiliriz. Örneğin `document.getElementById` yazdığınızda TypeScript bunun bi çeşit `HTMLElement` olduğunu tahmin edecektir ancak siz sayfanızda her zaman ID'si olan bir `HTMLCanvasElement`'i olacağını biliyorsunuzdur. 
+
+  ```typescript
+  const myCanvas = document.getElementById("main_canvas") as HTMLCanvasElement;
+  ```
+
+* Literal Type 
+
+  * Bir çeşit kendi tipini oluşturma,
+
+    ```typescript
+    function printText(s: string, alignment: "left" | "right" | "center") {	
+    ```
+
+* strictNullChecks
+  * true olması durumunda null yada undefined, string ve number vb (Literal dahil) değişkenlere atanamaz.
+* Dynamic typing, static typing
+  * JS Dynamic kullanır ve kontrol kısmını compiler aşamasından önce yapmaz, lakin TS gibi diller, bunu çok erkenden kontrol eder ve buna static type işlemi denir. Güvenilirlik açısından daha iyidir. 
+* C'deki -W-W-W gibi kullanmak için derleme aşamasında --noEmitOnError flag'i eklenebilir.
+* noImplicitAny
+  * any type'ına implicit işlemini engeller. Hard mode...
+* 
