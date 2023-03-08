@@ -1,7 +1,6 @@
 import * as fs from 'fs';
 
 /**
- * It is not working like a global function but like this it is working
  * You can send more than one file to copy
  * to execute it you need to run the command: node dist/index.js cp <path1> <path2>... <copyToPath>
  */
