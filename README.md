@@ -107,4 +107,12 @@ interface  TestInterface {
 * C'deki -W-W-W gibi kullanmak için derleme aşamasında --noEmitOnError flag'i eklenebilir.
 * noImplicitAny
   * any type'ına implicit işlemini engeller. Hard mode...
+* Strict mode
+
+  * Some of the rules enforced by strict mode in TypeScript include:
+    - Variables must be declared before they are used.
+    - Functions cannot be declared inside of a block statement (e.g., inside an if statement).
+    - Octal numeric literals are not allowed.
+    - The `this` keyword behaves differently inside of functions.
+    - The `with` statement is not allowed.
 * 
