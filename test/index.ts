@@ -1,2 +1,9 @@
-const test = ["cp", "cp", "asdasd", "12312"].indexOf("asdasd")
-console.log(test)
+class TuringQueue<T> {
+  private data = [];
+  push(item: T) {
+    this.data.push(item);
+  }
+  pop(): T {
+    return this.data.shift();
+  }
+}
