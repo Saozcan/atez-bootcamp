@@ -88,6 +88,26 @@ export class GameController {
     return this.cheapSharkService.getGameByTitle(title);
   }
 
+  @get('games/setAlert')
+  @response(200, {
+    description: 'Set Alert for GameID',
+    content: {
+      'application/json': {
+        schema: {
+          type: 'boolean',
+        }
+      }
+    }
+  })
+  async setAlert(
+    @param.query.string('action') action: string,
+    @param.query.string('email') email: string,
+    @param.query.string('gameID') gameID: number,
+    @param.query.string('price') price: number,
+  ): Promise<boolean> {
+    return this.cheapSharkService.setAlert(action, email, gameID, price);
+  }
+
 
   @patch('/games')
   @response(200, {

@@ -10,6 +10,7 @@ export interface CheapSharkService {
   getAllStores(): Promise<StoreCrawl[]>;
   getAllDeals(): Promise<Deals[]>;
   getGameByTitle(title: string): Promise<Games[]>;
+  setAlert(action:string, email: string, gameID: number, price: number): Promise<boolean>;
 }
 
 export class CheapSharkServiceProvider implements Provider<CheapSharkService> {

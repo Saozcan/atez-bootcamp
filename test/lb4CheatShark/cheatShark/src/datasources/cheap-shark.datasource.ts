@@ -40,6 +40,21 @@ const config = {
       functions: {
         getGameByTitle: ['title'],
       }
+    },
+    {
+      template: {
+        method: 'GET',
+        url: 'https://www.cheapshark.com/api/1.0/alerts',
+        query: {
+          action: '{action}',
+          email: '{email}',
+          gameID: '{gameID}',
+          price: '{price}',
+        }
+      },
+      functions: {
+        setAlert: ['action', 'email', 'gameID', 'price'],
+      }
     }
     ],
 };
