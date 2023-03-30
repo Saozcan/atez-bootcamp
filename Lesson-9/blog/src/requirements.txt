@@ -1,0 +1,24 @@
+
+Relationships in Postgres
+- one to one
+- one to many
+- many to many
+
+Author
+- firstName
+- lastName
+
+Posts
+- title
+- content
+- author_id =>
+- created_date
+- updated_date
+- deleted_date
+- category
+- sub_category
+
+Category
+- name
+
+Post has many categories ->
