@@ -2,7 +2,6 @@ import {
   Count,
   CountSchema,
   Filter,
-  FilterExcludingWhere,
   repository,
   Where,
 } from '@loopback/repository';
@@ -12,8 +11,6 @@ import {
   get,
   getModelSchemaRef,
   patch,
-  put,
-  del,
   requestBody,
   response,
 } from '@loopback/rest';
