@@ -103,6 +103,8 @@ export class GamesController {
       throw new HttpErrors.BadRequest(err);
     }
 
+    await this.gamesRepository.createAll(returnGames);
+
     return returnGames;
   }
 
@@ -125,4 +127,5 @@ export class GamesController {
   ): Promise<boolean> {
     return this.cheapSharkService.setAlert(action, email, gameID, price);
   }
+
 }
