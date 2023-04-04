@@ -16,4 +16,9 @@ export class DealsController {
   async getAllDeals(): Promise<never> {
     return this.cheapSharkRest.getAllDeals('deals', 1);
   }
+
+  @get('/deals/test')
+  async test(): Promise<string> {
+    return 'test'
+  }
 }
